@@ -25,8 +25,58 @@ public class DeveloperTest {
         assertEquals("Fred Z.", Developer.getName());
     }
 
-    // TODO: Add additional tests as needed to get to 100% jacoco line coverage, and
-    // 100% mutation coverage (all mutants timed out or killed)
+    @Test
+    public void getTeam_returns_team_with_correct_name() {
+        Team  t = Developer.getTeam();
+        assertEquals("s25-09", t.getName());
+    }
+
+    @Test
+    public void getTeam_returns_team_with_correct_members() {
+        Team  t = Developer.getTeam();
+        assertTrue(t.getMembers().contains("Andrew K."),"Team should contain Andrew K.");
+        assertTrue(t.getMembers().contains("Fred Z."),"Team should contain Fred Z.");
+        assertTrue(t.getMembers().contains("Jason Z."),"Team should contain Jason Z.");
+        assertTrue(t.getMembers().contains("Joel S."),"Team should contain Joel S.");
+        assertTrue(t.getMembers().contains("Moiez B."),"Team should contain Moiez B.");
+        assertTrue(t.getMembers().contains("Ruben A."),"Team should contain Ruben A.");
+    }
+
+    @Test
+    public void getTeam_returns_team_with_Andrew_K() {
+        Team  t = Developer.getTeam();
+        assertTrue(t.getMembers().contains("Andrew K."),"Team should contain Andrew K.");
+    }
+
+    @Test
+    public void getTeam_returns_team_with_Fred_Z() {
+        Team  t = Developer.getTeam();
+        assertTrue(t.getMembers().contains("Fred Z."),"Team should contain Fred Z.");
+    }
+
+    @Test
+    public void getTeam_returns_team_with_Jason_Z() {
+        Team  t = Developer.getTeam();
+        assertTrue(t.getMembers().contains("Jason Z."),"Team should contain Jason Z.");
+    }
+
+    @Test
+    public void getTeam_returns_team_with_Joel_S() {
+        Team  t = Developer.getTeam();
+        assertTrue(t.getMembers().contains("Joel S."),"Team should contain Joel S.");
+    }
+
+    @Test
+    public void getTeam_returns_team_with_Moiez_B() {
+        Team  t = Developer.getTeam();
+        assertTrue(t.getMembers().contains("Moiez B."),"Team should contain Moiez B.");
+    }
+
+    @Test
+    public void getTeam_returns_team_with_Ruben_A() {
+        Team  t = Developer.getTeam();
+        assertTrue(t.getMembers().contains("Ruben A."),"Team should contain Ruben A.");
+    }
 
     @Test
     public void getGithubId_returns_correct_githubId() {
